@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
 
 
   RegForm:FormGroup
@@ -31,17 +31,13 @@ export class RegisterComponent {
       Validators.pattern('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$^+=!*()@%&]).{8,16}$')
     ]),
 
-    // RegConfirm: new FormControl('', [Validators.required, this.confirmpass])
+
           
   });
 }
-
-// private confirmpass() {
-  
-//   if (this.RegForm.value.Regpass === this.RegForm.value.RegConfirm) {
-//     return true;
-//   }else return false;
-// }
+ngOnInit(): void {
+  throw new Error('Method not implemented.');
+}
 
 
   submitForm() {
